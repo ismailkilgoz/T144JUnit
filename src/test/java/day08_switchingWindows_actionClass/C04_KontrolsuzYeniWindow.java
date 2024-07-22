@@ -57,17 +57,17 @@ public class C04_KontrolsuzYeniWindow extends TestBaseEach {
         // ● Bulunan urun sayisinin 16 olduğunu test edin
         List <WebElement> urunSayisiList = driver.findElements(By.xpath("//*[@class='product-box mb-2 pb-1']"));
 
-        Assertions.assertTrue(urunSayisiList.size()==16);
+        Assertions.assertEquals(16, urunSayisiList.size());
 
         // ● Ilk actiginiz addremove sayfasinin oldugu window’a donun
         driver.switchTo().window(ilkWindowWHD);
         ReusableMethods.bekle(2);
 
         // ● Url’in addremove icerdigini test edin
-        String expectedUrlText = "addremove";
+        String expectedUrlIcerik = "addremove";
         String actualUrl = driver.getCurrentUrl();
 
-        Assertions.assertTrue(actualUrl.contains(expectedUrlText));
+        Assertions.assertTrue(actualUrl.contains(expectedUrlIcerik));
 
         ReusableMethods.bekle(2);
     }
